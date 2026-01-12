@@ -1,0 +1,25 @@
+{
+  "name": "algocode-evaluator-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "prestart": "npm run build",
+    "watch": "npx tsc -w",
+    "start": "npx nodemon dist/index.js",
+    "dev": "npx concurrently --kill-others \"npm run watch\" \"npm run start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.1",
+    "express": "^5.2.1",
+    "http-status-codes": "^2.3.0"
+  }
+}
