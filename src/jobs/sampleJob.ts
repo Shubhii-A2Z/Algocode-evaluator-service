@@ -7,8 +7,8 @@ export default class SampleJob implements IJob{
     payload: Record<string, unknown>;
 
     constructor(payload: Record<string,unknown>){
-        this.payload=payload;
         this.name=this.constructor.name;
+        this.payload=payload;
     }
 
     handle=()=>{
