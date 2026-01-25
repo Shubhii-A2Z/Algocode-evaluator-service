@@ -7,6 +7,7 @@ import apiRouter from "./routes";
 import sampleWorker from "./workers/sampleWorkers";
 // import runJava from "./containers/runJavaDocker";
 import runCpp from "./containers/runCppDocker";
+import SubmissionWorker from "./workers/submissionWorker";
 
 const app=express();
 
@@ -20,6 +21,7 @@ app.listen(serverConfig.PORT,()=>{
     console.log(`The Server is ready at port ${serverConfig.PORT}`);
 
     sampleWorker('SampleQueue');
+    SubmissionWorker('SubmissionQueue');
 
     const code=`
     #include <bits/stdc++.h>
